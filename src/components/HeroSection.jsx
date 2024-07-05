@@ -3,6 +3,7 @@ import { Button, Modal, Box, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ReferralForm from "./ReferralForm";
+import { Toaster } from "react-hot-toast";
 
 const navigation = [
 	{ name: "Refer & Earn", href: "#" },
@@ -58,7 +59,7 @@ const HeroSection = () => {
 					<div className="hidden lg:flex lg:flex-1 lg:justify-end">
 						<a
 							href="#"
-							className="bg-blue-400 text-white px-3 py-2 rounded-sm text-sm font-semibold leading-6"
+							className="bg-blue-400 hover:bg-blue-500 text-white px-3 py-2 rounded-sm text-sm font-semibold leading-6"
 						>
 							Try For Free <span aria-hidden="true">&rarr;</span>
 						</a>
@@ -71,7 +72,7 @@ const HeroSection = () => {
 					<div className="fixed inset-0 z-50" />
 					<div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 						<div className="flex items-center justify-between">
-							<Typography variant="h2" className="text-sky-600">
+							<Typography variant="h4" className="text-sky-600">
 								Accredian
 							</Typography>
 							<button
@@ -99,9 +100,9 @@ const HeroSection = () => {
 								<div className="py-6">
 									<a
 										href="#"
-										className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+										className="bg-blue-400 hover:bg-blue-500 text-white px-3 py-2 rounded-sm text-sm font-semibold leading-6"
 									>
-										Log in
+										Try For Free <span aria-hidden="true">&rarr;</span>
 									</a>
 								</div>
 							</div>
@@ -123,7 +124,7 @@ const HeroSection = () => {
 						}}
 					/>
 				</div>
-				<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+				<div className="mx-auto max-w-2xl py-32 sm:py-48">
 					<div className="hidden sm:mb-8 sm:flex sm:justify-center">
 						<div className="relative rounded-full px-3 py-1 text-sm font-black leading-6 ring-1 text-gray-700 ring-gray-900/10 hover:ring-gray-900/20">
 							Get A Chance to Win Up-to 150000
@@ -134,10 +135,10 @@ const HeroSection = () => {
 						</div>
 					</div>
 					<div className="text-center">
-						<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+						<h1 className="text-2xl md:text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
 							Let's Learn & Earn
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-gray-600">
+						<p className="mt-6 text-sm md:text-lg leading-8 text-gray-600">
 							Dive into a transformative learning experience with Learn & Earn,
 							where knowledge meets rewards. Explore a curated selection of
 							courses, enhance your skills, and earn incentives for your
@@ -147,7 +148,7 @@ const HeroSection = () => {
 							<a
 								variant="contained"
 								color="primary"
-								className="cursor-pointer rounded-sm bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+								className="cursor-pointer rounded-sm bg-blue-500 p-1.5 md:px-3.5 md:py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							>
 								Get started
 							</a>
@@ -155,7 +156,7 @@ const HeroSection = () => {
 								variant="contained"
 								color="primary"
 								onClick={handleOpen}
-								className="cursor-pointer rounded-sm bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+								className="cursor-pointer rounded-sm bg-blue-500 p-1.5 md:px-3.5 md:py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							>
 								Refer Now <span aria-hidden="true">→</span>
 							</a>
@@ -193,6 +194,7 @@ const HeroSection = () => {
 					<ReferralForm open={open} handleClose={handleClose} />
 				</Box>
 			</Modal>
+			<Toaster />
 		</div>
 	);
 };
