@@ -48,8 +48,6 @@ const ReferralForm = ({ open, handleClose }) => {
 				}
 			);
 
-			console.log("response", response);
-
 			if (response.status === 201) {
 				toast.success("Referral Sent Successfully", {
 					duration: 4000,
