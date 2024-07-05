@@ -7,10 +7,21 @@ import {
 	DialogTitle,
 	DialogContent,
 	DialogActions,
+	FormControl,
+	InputLabel,
+	Select,
+	MenuItem,
 } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import toast, { Toaster } from "react-hot-toast";
+
+const courses = [
+	"Product Management",
+	"Fintech",
+	"Data Science",
+	"Business Management",
+];
 
 const ReferralForm = ({ open, handleClose }) => {
 	const [loading, setLoading] = useState(false);
@@ -151,6 +162,33 @@ const ReferralForm = ({ open, handleClose }) => {
 										errors.friendEmail ? errors.friendEmail.message : null
 									}
 								/>
+							)}
+						/>
+						<Controller
+							name="recommendedCourse"
+							control={control}
+							defaultValue=""
+							rules={{ required: "Recommended Course is required" }}
+							render={({ field }) => (
+								<FormControl fullWidth margin="normal">
+									<InputLabel id="recommendedCourse-label">
+										Recommended Course
+									</InputLabel>
+									<Select
+										{...field}
+										labelId="recommendedCourse-label"
+										id="recommendedCourse"
+										error={!!errors.recommendedCourse}
+										defaultValue=""
+										fullWidth
+									>
+										{courses.map((course, index) => (
+											<MenuItem key={index} value={course}>
+												{course}
+											</MenuItem>
+										))}
+									</Select>
+								</FormControl>
 							)}
 						/>
 					</DialogContent>
