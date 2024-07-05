@@ -17,10 +17,10 @@ import Box from "@mui/material/Box";
 import toast, { Toaster } from "react-hot-toast";
 
 const courses = [
-	"Product Management",
+	"ProductManagement",
 	"Fintech",
-	"Data Science",
-	"Business Management",
+	"DataScience",
+	"BusinessManagement",
 ];
 
 const ReferralForm = ({ open, handleClose }) => {
@@ -34,6 +34,7 @@ const ReferralForm = ({ open, handleClose }) => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
+		console.log(data);
 		try {
 			setLoading(true);
 			const response = await fetch(
